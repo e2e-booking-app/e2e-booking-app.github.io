@@ -3,13 +3,17 @@ import { createSubmitHandler } from '../util.js';
 import * as roomService from '../data/room.js';
 
 const createTemplate = (onSubmit) => html `
-<h2>Host a new room!</h2>
-<form @submit=${onSubmit}>
-    <label>Name: <input type="text" name="name"></label>
-    <label>Location: <input type="text" name="location"></label>
-    <label>Beds: <input type="number" name="beds"></label>
-    <button>Create</buttno>
-</form>
+<div class="form-container">
+    <div class="form-data">
+        <h2>Host a new room!</h2>
+        <form @submit=${onSubmit} class="create-form">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="location" placeholder="Location">
+            <input type="number" name="beds" placeholder="Number of beds">
+            <button>Create</buttno>
+        </form>
+    </div>
+</div>
 `;
 
 export function createView(ctx) {
